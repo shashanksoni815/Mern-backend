@@ -4,6 +4,10 @@
 //     console.log("Hello ", i);   
 // }
 
-// console.log("Bye");
+// console.log("Bye");.exit
 
-console.log(process.argv);
+
+// console.log(process.argv);
+const value = require("./math");
+
+console.log(value);
