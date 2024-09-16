@@ -15,18 +15,28 @@ app.listen(port, () => {
 //     res.send("heyy... It's Shashank Soni");
 // });
 
+// app.get("/", (req, res) => {
+//     res.send("you contacted root path");
+// });
+
+// app.get("/apple", (req, res) => {
+//     res.send("you contacted apple path");
+// });
+
+// app.get("/orange", (req, res) => {
+//     res.send("you contacted orange path");
+// });
+
+// app.get("*", (req, res) => {
+//     res.send("you contacted default path");
+// });
+
 app.get("/", (req, res) => {
-    res.send("you contacted root path");
+    res.send("Hello, i am root");
 });
 
-app.get("/apple", (req, res) => {
-    res.send("you contacted apple path");
-});
-
-app.get("/orange", (req, res) => {
-    res.send("you contacted orange path");
-});
-
-app.get("*", (req, res) => {
-    res.send("you contacted default path");
+app.get("/:username/:id", (req, rest) => {
+    let {username, id} = req.params;
+    let htmlStr = `<h1>Welcome to the page of @${username}!</h1>`;
+    res.send(htmlStr);
 });
