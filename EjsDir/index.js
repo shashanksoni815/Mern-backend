@@ -3,7 +3,11 @@ const app = express();
 
 const port = 8080;
 
-app.get("view engine", "ejs");
+app.set("view engine", "ejs");
+
+app.get("/", (req, res) => {
+    res.send("this is home");
+});
 
 app.listen(port, () => {
     console.log(`listening on port ${port}`);
