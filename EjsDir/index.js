@@ -17,6 +17,8 @@ app.get("/ig/:username", (req, res) => {
     const instaData = require("./views/data.json");
     // console.log(instaData);
     const data = instaData[username];
+    // const followers = instaData[followers];
+    // const following = instaData[following];
     console.log(data);
     res.render("instagram.ejs", {data});
 });
