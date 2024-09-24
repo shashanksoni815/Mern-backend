@@ -51,3 +51,16 @@ function PersonMaker(name, age) {
 
 let p1 = PersonMaker("adam", 25);
 let p2 = PersonMaker("eve", 25);
+
+// New Operator
+
+function Person(name, age) {
+    this.name = name;
+    this.age = age;
+}
+
+Person.prototype.talk = function () {
+    console.log(`Hi, my name is ${this.name}`);
+};
+
+let P1 = new Person("xyz", 25);
