@@ -64,3 +64,5 @@ Person.prototype.talk = function () {
 };
 
 let P1 = new Person("xyz", 25);
+let P2 = new Person("abc", 25);
+let P3 = new Person("pqr", 25);
