@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = 3000;
+const port = 8080;
 const path = require("path");
 
 app.use(express.urlencoded({extended: true}));
@@ -30,9 +30,14 @@ app.get("/posts", (req, res) => {
 });
 
 app.get("/posts/new", (req, res) => {
-    res.render();
+    res.render("new.ejs");
+});
+
+app.post("/posts", (req, res) => {
+    console.log(req.body);
+    res.send("post request is working");
 });
 
 app.listen(port, () => {
-    console.log("listening to port : 3000");
+    console.log("listening to port : 8080");
 });
