@@ -52,7 +52,7 @@ function PersonMaker(name, age) {
 let p1 = PersonMaker("adam", 25);
 let p2 = PersonMaker("eve", 25);
 
-// New Operator
+// Constructors - dosen't return anything & start with capital
 
 function Person(name, age) {
     this.name = name;
@@ -62,6 +62,18 @@ function Person(name, age) {
 Person.prototype.talk = function () {
     console.log(`Hi, my name is ${this.name}`);
 };
+
+// class typed
+
+class Person {
+    constructor(name,age) {
+        this.name = name;
+        this.age = age;
+    }
+    talk() {
+        console.log(`Hi, my name is ${this.name}`);
+    }
+}
 
 let P1 = new Person("xyz", 25);
 let P2 = new Person("abc", 25);
