@@ -4,11 +4,17 @@ const port = 8080;
 const path = require("path");
 
 app.use(express.urlencoded({extended: true}));
-''
+
+
+
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
-app.use(express.static('public'));
+// app.use(express.static('public'));
+app.use('/public', express.static('public'));
+
+//app.use(express.static(path.join(__dirname, "public")));
+// app.use(express.static(path.join(__filename, "style.css")));
 
 let posts = [
     {
@@ -27,6 +33,7 @@ let posts = [
 
 app.get("/posts", (req, res) => {
     res.render("index.ejs", { posts });
+    // res.render('index.ejs', { async: true });
 });
 
 app.get("/posts/new", (req, res) => {
@@ -34,7 +41,9 @@ app.get("/posts/new", (req, res) => {
 });
 
 app.post("/posts", (req, res) => {
-    console.log(req.body);
+    // console.log(req.body);
+    let { username, content } = req.body;
+    posts.push({ username, content });
     res.send("post request is working");
 });
 
