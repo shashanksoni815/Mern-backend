@@ -18,14 +18,17 @@ app.use('/public', express.static('public'));
 
 let posts = [
     {
+        id: "a1",
         username : "Chameli Devi",
         content : "I love Coding!",
     },
     {
+        id: "a2",
         username : "Shashank Soni",
         content : "Fresher",
     },
     {
+        id: "a3",
         username : "Coder",
         content : "Error",
     },
@@ -44,7 +47,15 @@ app.post("/posts", (req, res) => {
     // console.log(req.body);
     let { username, content } = req.body;
     posts.push({ username, content });
-    res.send("post request is working");
+    // res.send("post request is working");
+    res.redirect("/posts");
+});
+
+app.get("/posts/:id", (req, res) => {
+    let { id } = req.params;
+    let post = posts.find((p) => id === p.id);
+    console.log(post);
+    res.send("request working :)");
 });
 
 app.listen(port, () => {
