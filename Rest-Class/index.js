@@ -56,9 +56,17 @@ app.post("/posts", (req, res) => {
 
 app.get("/posts/:id", (req, res) => {
     let { id } = req.params;
+    console.log(id);
     let post = posts.find((p) => id === p.id);
     // console.log(post);
     res.render("show.ejs", { post });
+});
+
+app.patch("/posts", (req, res) => {
+    let { id } = req.params;
+    console.log(id);
+    res.send("patch request is working");
+    
 });
 
 app.listen(port, () => {
