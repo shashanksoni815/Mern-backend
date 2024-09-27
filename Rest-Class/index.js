@@ -49,7 +49,6 @@ app.post("/posts", (req, res) => {
     let { username, content } = req.body;
     let id = uuidv4();
     posts.push({id, username, content });
-    // res.send("post request is working");
     res.redirect("/posts");
 });
 
