@@ -65,7 +65,7 @@ app.patch("/posts", (req, res) => {
     let post = posts.find((p) => id === p.id);
     post.content = newContent;
     console.log(post);
-    res.send("/posts");
+    res.redirect("/posts");
     
 });
 
@@ -77,8 +77,8 @@ app.get("/posts/:id/edit", (req, res) => {
 
 app.delete("/posts/:id", (req, res) => {
     let { id } = req.params;
-    let post = posts.find((p) => id === p.id);
-    read.send("delete sucess");
+    post = posts.filter((p) => id !== p.id);
+    res.redirect("/posts");
 })
 
 app.listen(port, () => {
