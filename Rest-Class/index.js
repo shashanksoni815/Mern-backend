@@ -75,6 +75,12 @@ app.get("/posts/:id/edit", (req, res) => {
     res.render("edit.ejs", { post });
 });
 
+app.delete("/posts/:id", (req, res) => {
+    let { id } = req.params;
+    let post = posts.find((p) => id === p.id);
+    read.send("delete sucess");
+})
+
 app.listen(port, () => {
     console.log("listening to port : 8080");
 });
