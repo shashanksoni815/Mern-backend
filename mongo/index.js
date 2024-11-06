@@ -21,10 +21,25 @@ const userSchema = new mongoose.Schema({
 
 const User = mongoose.model("User", userSchema);
 
-const user1 = new User ({
-    name: "ABC",
-    email: "abc.gmail.com",
-    age: 40,
+// const user1 = new User ({
+//     name: "ABC",
+//     email: "abc.gmail.com",
+//     age: 40,
+// });
+
+// user1.save()
+
+const user2 = new User ({
+    name: "def",
+    email: "def.gmail.com",
+    age: 41,
 });
 
-user1.save();
+user2
+    .save()
+    .then((res) => {
+        console.log(res);
+    })
+    .catch((err) => {
+        console.log(err);
+    });
