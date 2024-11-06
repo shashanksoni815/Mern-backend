@@ -29,14 +29,30 @@ const User = mongoose.model("User", userSchema);
 
 // user1.save()
 
-const user2 = new User ({
-    name: "def",
-    email: "def.gmail.com",
-    age: 41,
-});
+// const user2 = new User ({
+//     name: "def",
+//     email: "def.gmail.com",
+//     age: 41,
+// });
 
-user2
-    .save()
+// user2
+//     .save()
+//     .then((res) => {
+//         console.log(res);
+//     })
+//     .catch((err) => {
+//         console.log(err);
+//     });
+
+// User.insertMany([
+//     { name: "tony", email: "tony.gmail.com", age: 42},
+//     { name: "rony", email: "rony.gmail.com", age: 43},
+//     { name: "sony", email: "sony.gmail.com", age: 40},
+// ]).then((res) => {
+//     console.log(res);
+// });
+
+User.find()
     .then((res) => {
         console.log(res);
     })
