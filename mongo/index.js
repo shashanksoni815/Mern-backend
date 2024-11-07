@@ -44,13 +44,13 @@ const User = mongoose.model("User", userSchema);
 //         console.log(err);
 //     });
 
-// User.insertMany([
-//     { name: "tony", email: "tony.gmail.com", age: 42},
-//     { name: "rony", email: "rony.gmail.com", age: 43},
-//     { name: "sony", email: "sony.gmail.com", age: 40},
-// ]).then((res) => {
-//     console.log(res);
-// });
+User.insertMany([
+    { name: "tony", email: "tony.gmail.com", age: 42},
+    { name: "rony", email: "rony.gmail.com", age: 43},
+    { name: "sony", email: "sony.gmail.com", age: 40},
+]).then((res) => {
+    console.log(res);
+});
 
 User.find()
     .then((res) => {
@@ -58,4 +58,4 @@ User.find()
     })
     .catch((err) => {
         console.log(err);
-    });
+    }); 
