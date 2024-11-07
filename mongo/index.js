@@ -35,14 +35,14 @@ const User = mongoose.model("User", userSchema);
 //     age: 41,
 // });
 
-// user2
-//     .save()
-//     .then((res) => {
-//         console.log(res);
-//     })
-//     .catch((err) => {
-//         console.log(err);
-//     });
+user2
+    .save()
+    .then((res) => {
+        console.log(res);
+    })
+    .catch((err) => {
+        console.log(err);
+    });
 
 User.insertMany([
     { name: "tony", email: "tony.gmail.com", age: 42},
