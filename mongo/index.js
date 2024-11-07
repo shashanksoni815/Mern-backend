@@ -21,11 +21,11 @@ const userSchema = new mongoose.Schema({
 
 const User = mongoose.model("User", userSchema);
 
-// const user1 = new User ({
-//     name: "ABC",
-//     email: "abc.gmail.com",
-//     age: 40,
-// });
+const user1 = new User ({
+    name: "ABC",
+    email: "abc.gmail.com",
+    age: 40,
+});
 
 user1.save()
 
