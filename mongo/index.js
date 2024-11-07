@@ -27,13 +27,13 @@ const User = mongoose.model("User", userSchema);
 //     age: 40,
 // });
 
-// user1.save()
+user1.save()
 
-// const user2 = new User ({
-//     name: "def",
-//     email: "def.gmail.com",
-//     age: 41,
-// });
+const user2 = new User ({
+    name: "def",
+    email: "def.gmail.com",
+    age: 41,
+});
 
 user2
     .save()
