@@ -9,7 +9,7 @@ const ExpressError = require("./ExpressError")
 // })
 
 const classToken = (req, res, next) => {
-    let {token} = req.query;
+    let  { token } = req.query
     if (token === "giveaccess") {
         next();
     }
@@ -28,6 +28,7 @@ app.use((req, res, next) => {
 
 app.get("/", (req, res) => {
     res.send("server is connected");
+    next()
 });
 
 app.get("/random", (req, res) => {
@@ -39,8 +40,8 @@ app.get("/err", (req, res, next) => {
 });
 
 app.use((err, req, res, next) => {
-    console.log("-----ERROR-----")
-    res.send(err);
+    console.log(err)
+    // res.send(err);
 })
 
 app.listen(8080, () => {
